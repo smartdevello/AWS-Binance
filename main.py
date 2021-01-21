@@ -60,8 +60,8 @@ def get_all_binance(symbol, kline_size, save = False):
 
 binance_symbols = ["ETHUSDT"]
 for symbol in binance_symbols:
-    df = get_all_binance(symbol, '5m', save = True)
-#df = pd.read_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\ETHUSDT-5m-data.csv", parse_dates=True)
+    get_all_binance(symbol, '5m', save = True)
+df = pd.read_csv(r"ETHUSDT-5m-data.csv", parse_dates=True)
 #df.drop_duplicates(subset ="timestamp", keep='first', inplace = True)
 df = df.tail(8640)
 #Computing indicators SMA and ADX, and whether trend is bear or bull according to sma
@@ -109,8 +109,8 @@ dfeth = df.tail(1)
 #The same for NANO
 binance_symbols = ["NANOUSDT"]
 for symbol in binance_symbols:
-    df = get_all_binance(symbol, '5m', save = True)
-#df = pd.read_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\NANOUSDT-5m-data.csv", parse_dates=True)
+    get_all_binance(symbol, '5m', save = True)
+df = pd.read_csv(r"NANOUSDT-5m-data.csv", parse_dates=True)
 #df.drop_duplicates(subset ="timestamp", keep='first', inplace = True)
 df = df.tail(8640)
 #Computing indicators SMA and ADX, and whether trend is bear or bull according to sma
