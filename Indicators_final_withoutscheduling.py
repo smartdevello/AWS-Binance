@@ -58,11 +58,11 @@ def get_all_binance(symbol, kline_size, save = False):
 binance_symbols = ["ETHUSDT"]
 for symbol in binance_symbols:
     get_all_binance(symbol, '5m', save = True)
-df = pd.read_csv(r"ETHUSDT-5m-data.csv", parse_dates=True)
+df = pd.read_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\ETHUSDT-5m-data.csv", parse_dates=True)
 df = df[["timestamp","open","high","low","close","volume","close_time","quote_av","trades","tb_base_av","tb_quote_av"]]
 df = df[:-1]
 #df.drop_duplicates(subset ="timestamp", keep='first', inplace = True)
-df.to_csv(r"ETHUSDT-5m-data.csv")
+df.to_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\ETHUSDT-5m-data.csv")
 
 #df.drop_duplicates(subset ="timestamp", keep='first', inplace = True)
 df = df.tail(8640)
@@ -112,10 +112,10 @@ dfeth = df.tail(1)
 binance_symbols = ["NANOUSDT"]
 for symbol in binance_symbols:
     get_all_binance(symbol, '5m', save = True)
-df = pd.read_csv(r"NANOUSDT-5m-data.csv", parse_dates=True)
+df = pd.read_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\NANOUSDT-5m-data.csv", parse_dates=True)
 df = df[["timestamp","open","high","low","close","volume","close_time","quote_av","trades","tb_base_av","tb_quote_av"]]
 df = df[:-1]
-df.to_csv(r"NANOUSDT-5m-data.csv")
+df.to_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\NANOUSDT-5m-data.csv")
 
 #df.drop_duplicates(subset ="timestamp", keep='first', inplace = True)
 df = df.tail(8640)
@@ -207,7 +207,7 @@ if (dfeth.iloc[0, 23] == -1) & (balancenano > 10):
     symbol = "NANOUSDT"
     client.order_market_sell(symbol=symbol,quantity=quantity) 
 
-full_history = pd.read_csv(r"history.csv", parse_dates=True)
+full_history = pd.read_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\history.csv", parse_dates=True)
 full_history=full_history.iloc[0:,np.r_[1:3]]
 current_time=current_time
 history = pd.DataFrame(
@@ -219,4 +219,4 @@ history = pd.DataFrame(
 
 frames=[full_history,history]
 history = pd.concat(frames)
-history.to_csv(r"history.csv")
+history.to_csv(r"C:\Users\io\Desktop\DO_NOT_TOUCH\history.csv")
