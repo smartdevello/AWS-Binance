@@ -18,6 +18,7 @@ from datetime import timedelta, datetime
 from dateutil import parser
 from binance.client import Client
 
+
 ### API
 client = Client(keys.APIkey,keys.APIsecret)
 
@@ -220,3 +221,7 @@ history = pd.DataFrame(
 frames=[full_history,history]
 history = pd.concat(frames)
 history.to_csv(r"history.csv")
+
+f=open("timeline.txt", "a+")
+f.write("Executed at %s\r\n" % time.localtime( time.time()) )
+f.close()
